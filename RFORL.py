@@ -232,9 +232,9 @@ class RFORL(object):
                 q_loss = new_current_Q
 
                 
-                lmbda = 2/new_current_Q.abs().mean().detach()
+                # lmbda = 2/new_current_Q.abs().mean().detach()
                
-                actor_loss = - lmbda*q_loss.mean()
+                actor_loss = - q_loss.mean()
                 
                 # Optimize the actor 
                 self.actor_optimizer.zero_grad()
